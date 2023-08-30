@@ -1,0 +1,421 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --mainColor : orangered;
+    --secondColor : rgba(0, 0, 0, 25%);
+}
+body{
+    font-family: "Cairo", sans-serif;
+    overflow-x: hidden;
+}
+ul {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+.introduction-text{
+    text-align: center;
+    width: 100%;
+    margin-bottom : 30px;
+}
+.introduction-text h2{
+    color: var(--mainColor);
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+section{
+    padding-top: 95px;
+    padding-bottom: 95px;
+    background-color: #f7f7f7;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*Start nav bar*/
+nav{
+    background-color: var(--secondColor);
+    padding: 18px 0;
+    z-index: 145;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-height: 60px;
+    color: #fff;
+}
+nav div.toggle-menu{
+    color: #000;
+    width: 30px;
+    height: 20px;
+    display: none; 
+}
+nav div.toggle-menu span{
+    display: block;
+    height: 3px;
+    margin-bottom: 3px;
+    background-color: #000;
+    transition: 0.5s;
+}
+nav .toggle-menu span:nth-child(2){
+    width: 85%;
+    margin-left: auto;
+}
+nav .toggle-menu:hover span{
+    width: 85%;
+}
+.close{
+    width: 30px;
+    height: 0px;
+    position: relative;
+    transform: rotate(45deg);
+    background-color: transparent;
+    transition: 0.5s;
+    cursor: pointer;
+    display: none;
+}
+.close span{
+    display: block;
+    background-color: #fff;
+    position: absolute;
+}
+.close span:first-child{
+    width: 100%;
+    height: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.close span:last-child{
+    height: 100%;
+    width: 5%;
+    left: 50%;
+    transform: translate(-50%);
+}
+nav .flex-row{
+    display: flex;
+    justify-content: space-between;
+}
+nav .logo{
+    width: 300px;
+}
+nav .logo img{
+    width: 30px;
+    height: 30px;
+    border-radius: 25%;
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    padding-left: 15px;
+    font-size: 20px;
+}
+nav ul li{
+    margin-left: 15px;
+    display: inline-block;
+    position: relative;
+}
+nav ul li:before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    border-radius: 4px;
+    width: 100%;
+    height: 0px;
+    background-color: var(--mainColor);
+    transition: 0.2s;
+}
+nav ul a:hover li:before{
+    height: 2px;
+}
+@media (max-width :786px){
+    nav div.toggle-menu{
+        cursor: pointer;
+        position: relative;
+        top : 0;
+        display: block;
+    }
+    nav ul li{
+        display: block;
+        width: fit-content;
+        margin: 0 auto 30px;
+    }
+    nav  ul{
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 25%);
+        position: absolute;
+        right: 0;
+        width: 100%;
+        top: -213px;
+        display: block;
+        transition: .5s;
+    }
+    nav .close {
+        display: block;
+    }
+}
+/*End nav bar*/
+/* Start header section  */
+/*Start header*/
+header{
+    min-height: 100vh;
+    position: relative;
+}
+header .landing{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),
+                    url('../imgs/landing.jpg') ;
+    background-position: center;
+    background-size: cover;
+}
+header .introduction-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+
+span.key{
+    color: orangered;
+}
+header .introduction-text h1{
+    font-size: 40px;
+    color: #fff;
+    margin: 0 0 10px;
+}
+@media (max-width : 575px){
+    .introduction-text h1{
+        font-size: 25px !important;
+    }
+}
+.introduction-text p{
+    text-align: start;
+    max-width: 100%;
+    width: 500px;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: auto;
+}
+/* End header section */
+
+/*Start About section*/
+section.about{
+    background-color: #fff;
+}
+section.about .flex{
+    justify-content: space-around;
+}
+section.about .introduction-text{
+    width: 50%;
+}
+section.about .introduction-text p{
+    line-height: 30px;
+}
+@media (max-width :768px ) {
+    section.about .container>div.flex{
+        display: block;
+    }
+    section.about .introduction-text {
+        width: 100%;
+    }
+}
+section.about .details p{
+    margin-top: 5px;
+    font-size: 18px;
+}
+section.about .skills{
+    width: 100%;    
+    margin-top: 15px;
+}
+section.about .skills .flex{
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+@media (max-width : 575px) {
+    section.about .flex{
+        display: block;
+    }
+}
+section.about .skill-name{
+    text-align: center;
+    width: 100px;
+}
+@media (max-width : 575px) {
+    section.about .skill-name{
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+section.about  .skill-progress{
+    background-color: #dcdc;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: 30px;
+    width: calc(100% - 110px);
+}
+@media (max-width : 575px) {
+    section.about .skill-progress{
+        width: 100%;
+    }
+}
+section.about .skill-progress span{
+    width: 0;
+    height: 100%;
+    background-color: rgb(255, 206, 47);
+    display: block;
+    transition: 0.5s;
+}
+/* End About section */
+/* Start Services section  */
+
+section.service  .box-service{
+    background: white;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 0 0 10px 0 #cdcdcd;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+@media (min-width: 576px) {
+    section.service    .box-service{
+        flex: 1 0 100%;
+        margin-left: 0;
+    }
+}
+@media (min-width :635px ) {
+    section.service  .box-service{
+    flex: 1 0 45%;
+    margin-left: 25px;
+}
+}
+@media (min-width :992px ) {
+    section.service  .box-service{
+        flex: 1 0 30%;
+        margin-left: 25px;
+    }
+}
+section.service .flex .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    color: var(--mainColor);
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    margin: auto;
+}
+section.service  .box-service h3{
+    margin: 12px 0;
+}
+/*End Services Section */
+/*Start product section*/
+section.product{
+    background-color: #fff;
+    text-align: center;
+}
+@media (max-width : 992px) {
+    section.product .flex{
+        justify-content: center;
+    }
+}
+section.product .flex h4{
+    margin-bottom: 10px;
+}
+section.product .flex img{
+    width: 100%;
+    height: 90%;
+    border-radius: 5px;
+}
+section.product .flex .box{
+    cursor: pointer;
+    position: relative;
+    margin: 8px;
+    flex: 1 0 250px;
+    max-width: 400px;
+    overflow: hidden;
+}
+section.product .flex .links{
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 166, 0, 0.493);
+    transition: 0.3s linear;
+    visibility: hidden;
+}
+section.product .flex .box:hover .links{
+    visibility: visible;
+    height: 90%;
+}
+/* End product section */
+/* Start Contact Us section  */
+section.contact .flex{
+    justify-content: space-between;
+}
+section.contact .flex div{
+    width: 30%;
+}
+@media (max-width :768px ) {
+    section.contact .flex div{
+        width: 100%;
+        margin-bottom: 18px;
+    }
+}
+section.contact .flex span{
+    font-size: 28px;
+}
+/* End Contact us section  */
+/* Start footer  */
+footer{
+    background-color: var(--secondColor);
+    text-align: center;
+    padding: 25px;  
+    color: var(--mainColor);
+}
+/*Start Gride system*/
+@media(min-width :576px ) {/*Small devices*/
+    .container{
+        max-width: 540px;
+    }
+}
+@media(min-width :768px ) {
+    .container{
+        max-width: 750px;
+    }
+}
+@media(min-width :992px ) {
+    .container{
+        max-width: 970px;
+    }
+}
+@media(min-width : 1200px ) {
+    .container{
+        max-width: 1140px;
+    }
+}
+
+/*end Gride system*/
